@@ -14,7 +14,6 @@ public class SensorHumedad extends Sensor {
         Random random = new Random();
         valorMedido = random.nextInt(100);
         System.out.println("Sensor de Humedad: " + valorMedido + "%");
-
         notificarObservadores();
     }
 
