@@ -12,13 +12,13 @@ public class SensorTemperatura extends Sensor {
     @Override
     public void medir() {
         Random random = new Random();
-        valor = random.nextInt(40);
-        System.out.println("SensorTemperatura: " + valor + "°C");
+        valorMedido = random.nextInt(40);
+        System.out.println("SensorTemperatura: " + valorMedido + "°C");
         notificarObservadores();
     }
 
     @Override
     public boolean necesitaRiego() {
-        return valor > umbral;
+        return valorMedido > umbral;
     }
 }
