@@ -1,13 +1,10 @@
 
 import java.util.Random;
 
+import com.riego.EstrategiaEvaluacion;
 import com.riego.Sensor;
 
 public class SensorTemperatura extends Sensor {
-
-	public SensorTemperatura(int umbral) {
-		super(umbral);
-	}
 
     @Override
     public void medir() {
@@ -18,7 +15,7 @@ public class SensorTemperatura extends Sensor {
     }
 
     @Override
-    public boolean necesitaRiego() {
-        return valorMedido > umbral;
+    public EstrategiaEvaluacion getEstrategiaEvaluacion() {
+        return (valor, umbral) -> valor > umbral;
     }
 }

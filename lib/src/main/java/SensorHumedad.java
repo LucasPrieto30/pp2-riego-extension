@@ -1,13 +1,10 @@
 
+import com.riego.EstrategiaEvaluacion;
 import com.riego.Sensor;
 
 import java.util.Random;
 
 public class SensorHumedad extends Sensor {
-
-    public SensorHumedad(int umbral) {
-    	super(umbral);
-    }
 
     @Override
     public void medir() {
@@ -16,10 +13,11 @@ public class SensorHumedad extends Sensor {
         System.out.println("Sensor de Humedad: " + valorMedido + "%");
         notificarObservadores();
     }
-
+    
     @Override
-    public boolean necesitaRiego() {
-        return valorMedido < umbral;
+    public EstrategiaEvaluacion getEstrategiaEvaluacion() {
+        return (valor, umbral) -> valor < umbral;
     }
+
 }
 
