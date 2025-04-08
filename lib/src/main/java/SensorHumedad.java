@@ -7,11 +7,12 @@ import java.util.Random;
 public class SensorHumedad extends Sensor {
 
     @Override
-    public void medir() {
+    public int medir() {
         Random random = new Random();
         valorMedido = random.nextInt(100);
         System.out.println("Sensor de Humedad: " + valorMedido + "%");
         notificarObservadores();
+        return valorMedido;
     }
     
     @Override
