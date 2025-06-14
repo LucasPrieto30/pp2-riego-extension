@@ -1,16 +1,11 @@
-
-import java.util.Timer;
-import java.util.TimerTask;
-
 import com.riego.Evaluador;
 
-public class EvaluadorHumedadLogger extends Evaluador {
+public class EvaluadorHumedad1 extends Evaluador {
     @Override
     protected int obtenerMedicion() {
-        return 1; // Siempre mide 1 para forzar activación
+        return 1; // Siempre mide 1 para forzar activación y logeo
     }
 
-    
     @Override
     public void evaluar() {
     	ultimaMedicion = obtenerMedicion();
